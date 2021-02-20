@@ -1,0 +1,50 @@
+<!--
+  Generated template for the ClientesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Clientes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <form>
+      <ion-row>
+        <ion-col col-9>
+          <ion-item>
+            <ion-label stacked>Buscar</ion-label>
+            <ion-input [(ngModel)]="keyword" name="keyword" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button center middle (click)="search()">
+            <ion-icon name="search"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+
+  <ion-card *ngFor="let compra of compras" (click)="details(compra)">
+
+    <ion-card-header>
+      {{compra.nomeFantasia}}
+    </ion-card-header>
+
+    <ion-card-content>
+      CNPJ - {{compra.cnpj}} <br>
+      <ion-row *ngIf="compra?.visualizar">
+      Dívida - {{ compra.divida.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}}</ion-row>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
