@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { ClienteService } from '../../services/cliente.service';
 import { HomePage } from '../home/home';
 
@@ -24,25 +24,31 @@ export class RecuperarSenhaPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private formBuilder: FormBuilder,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private toastController: ToastController
     ) {
       this.form = this.formBuilder.group({
         email: ['', Validators.required]
       })
   }
 
-  ionViewDidLoad() {
-    
-  }
-
   recuperar(){
 
     this.clienteService.recuperarSenha(this.form.controls.email.value)
     .subscribe(
-      r => {this.navCtrl.setRoot(HomePage);},
-      err => { console.log('Não conseguiu recuperar a senha')}
+      r => {this.exibirMensagem('Uma nova senha foi gerada e enviada ao seu e-mail');this.navCtrl.setRoot(HomePage);},
+      err => { this.exibirMensagem('E-mail não encontrado');}
     )
-
   }
 
+  exibirMensagem(mensagem: string) {
+
+    const toast = this.toastController.create(
+      {
+        message : mensagem,
+        duration: 2000
+      }
+    ) 
+    toast.present();
+  }
 }

@@ -32,8 +32,8 @@
         <ion-label stacked readonly>Email</ion-label>
         <ion-input  formControlName="email" type="text" readonly></ion-input>
       </ion-item>
-      <button ion-button block>Editar</button>
-      <button ion-button block>Excluir Conta</button>
+      <button ion-button (click)="editar()" block>Editar</button>
+      <button ion-button (click)="confirmaExclusao()" block>Excluir Conta</button>
   </form>
 
 </ion-content>

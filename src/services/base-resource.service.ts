@@ -31,7 +31,7 @@ export abstract class BaseResourceService<T extends BaseResourceDTO<any>> {
   }
 
   update(resource: T): Observable<T> {
-    const url = `${this.apiPath}/${resource.id}`;
+    const url = `${this.apiPath}`;
 
     return this.http.put<T>(url, resource);
   }

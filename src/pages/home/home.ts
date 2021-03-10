@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController, NavController } from 'ionic-angular';
+import { MenuController, NavController, ToastController } from 'ionic-angular';
 import { UserDTO } from '../../models/user.dto';
 import { AuthService } from '../../services/auth.service';
 
@@ -17,7 +17,9 @@ export class HomePage {
   constructor(
     public navCtrl: NavController,
     public menu: MenuController,
-    public auth: AuthService) {
+    public auth: AuthService,
+    private toastController: ToastController
+    ) {
 
   }
 
@@ -36,20 +38,26 @@ export class HomePage {
         this.navCtrl.setRoot('ClientesPage');
       },
       error => {
-        alert('Login ou senha inválidos');
+        this.exibirMensagem('Login ou senha inválidos');
       });    
   }
 
   criarConta(){
     this.navCtrl.setRoot('ClienteFormPage');
   }
- 
-  signup() {
-    this.navCtrl.push('SignupPage');
-  }
 
   recuperarSenha(){
     this.navCtrl.setRoot('RecuperarSenhaPage');
   }
 
+  exibirMensagem(mensagem: string) {
+
+    const toast = this.toastController.create(
+      {
+        message : mensagem,
+        duration: 2000
+      }
+    ) 
+    toast.present();
+  }
 }

@@ -1,0 +1,56 @@
+<!--
+  Generated template for the ClienteEditarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Editar Dados</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-content padding>
+
+    Cliente
+  
+    <form [formGroup]="form">
+    
+        <ion-item>
+          <ion-label stacked>Nome</ion-label>
+          <ion-input  formControlName="nome" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>CPF</ion-label>
+          <ion-input  formControlName="cpf" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Telefone</ion-label>
+          <ion-input  formControlName="telefone"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input  formControlName="email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Confirma Email</ion-label>
+          <ion-input  formControlName="confirmaEmail" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Senha</ion-label>
+          <ion-input  formControlName="senha" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Confirma Senha</ion-label>
+          <ion-input  formControlName="confirmaSenha" type="password"></ion-input>
+        </ion-item>
+        <button ion-button block (click)="atualizar()">Atualizar</button>
+        <button ion-button block (click)="cancelar()">Cancelar</button>
+    </form>
+  
+  </ion-content>
+
+</ion-content>
+

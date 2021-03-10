@@ -15,8 +15,6 @@ export class ErrorInterceptor implements HttpInterceptor {
                 Authorization: localStorage.getItem("Authorization")
               }
             });
-
-            console.log("Injetou o token");
           }
 
         return next.handle(req)
@@ -29,10 +27,6 @@ export class ErrorInterceptor implements HttpInterceptor {
             if (!errorObj.status) {
                 errorObj = JSON.parse(errorObj);
             }
-
-            console.log("Erro detectado pelo interceptor:");
-            console.log(errorObj);
-
             return Observable.throw(errorObj);
         }) as any;
     }

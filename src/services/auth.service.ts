@@ -27,19 +27,4 @@ export class AuthService {
     logout() {
         localStorage.removeItem('Authorization');
     }
-
-    /*
-    refreshToken() {
-        return this.http.post(
-            `${API_CONFIG.baseUrl}/auth/refresh_token`, 
-            {},
-            {
-                observe: 'response',
-                responseType: 'text'
-            });
-    }
-
-
-
- */
 }

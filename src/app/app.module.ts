@@ -12,12 +12,16 @@ import { ErrorInterceptorProvider } from '../interceptors/error-interceptor';
 import { AuthService } from '../services/auth.service';
 import { ClienteService } from '../services/cliente.service';
 import { VisualizarContaPage } from '../pages/visualizar-conta/visualizar-conta';
+import { ClienteEditarPage } from '../pages/cliente-editar/cliente-editar';
+import { ClienteDetailsPage } from '../pages/cliente-details/cliente-details';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    VisualizarContaPage
+    VisualizarContaPage,
+    ClienteEditarPage,
+    ClienteDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import { VisualizarContaPage } from '../pages/visualizar-conta/visualizar-conta'
   entryComponents: [
     MyApp,
     HomePage,
-    VisualizarContaPage
+    VisualizarContaPage,
+    ClienteEditarPage,
+    ClienteDetailsPage
   ],
   providers: [
     StatusBar,

@@ -34,8 +34,8 @@ export class ClienteDetailsPage {
   visualizar(){
     this.clienteService.visualizar(this.compra.clienteId)
     .subscribe(
-      r => { console.log('Deu certo')},
-      err => { console.log('Deu errado')},
+    () => { },
+      () => {},
     )
   }
 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
+import { NgxMaskIonicModule } from 'ngx-mask-ionic';
 import { ClienteFormPage } from './cliente-form';
 
 @NgModule({
@@ -8,6 +9,7 @@ import { ClienteFormPage } from './cliente-form';
   ],
   imports: [
     IonicPageModule.forChild(ClienteFormPage),
+    NgxMaskIonicModule.forRoot()
   ],
 })
 export class ClienteFormPageModule {}

@@ -22,15 +22,15 @@
       </ion-item>
       <ion-item>
         <ion-label stacked>CPF</ion-label>
-        <ion-input  formControlName="cpf" type="text"></ion-input>
+        <ion-input  formControlName="cpf" type="text" mask="000.000.000-00" [showMaskTyped]="false" [dropSpecialCharacters] = "false"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Telefone</ion-label>
-        <ion-input  formControlName="telefone" type="text"></ion-input>
+        <ion-input  formControlName="telefone" mask="(00) 00000-0000" [showMaskTyped]="false" [dropSpecialCharacters] = "false" type="text"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Email</ion-label>
-        <ion-input  formControlName="email" type="text"></ion-input>
+        <ion-input  formControlName="email" type="email"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Confirma Email</ion-label>
