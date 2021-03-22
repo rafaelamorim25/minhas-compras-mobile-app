@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ClienteDTO } from '../../models/cliente.dto';
 import { Compra } from '../../models/compra.dto';
 import { ClienteService } from '../../services/cliente.service';
+import { ClienteDetailsPage } from '../cliente-details/cliente-details';
 
 /**
  * Generated class for the ClientesPage page.
@@ -61,7 +62,7 @@ export class ClientesPage {
   }
 
   details(compra: Compra) {
-    this.navCtrl.push('ClienteDetailsPage', {compra: compra});    
+    this.navCtrl.setRoot(ClienteDetailsPage, {compra: compra});    
   }
 
 }

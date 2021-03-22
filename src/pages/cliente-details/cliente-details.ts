@@ -39,4 +39,14 @@ export class ClienteDetailsPage {
     )
   }
 
+  formatarData(data: Date): string{
+
+    let d: string = data.toString();
+    let ano: string = d.substr(0, 4);
+    let mes: string = d.substr(5, 2);
+    let dia: string = d.substr(8, 2);
+
+    return dia + '/' + mes + '/' + ano;
+  }
+
 }

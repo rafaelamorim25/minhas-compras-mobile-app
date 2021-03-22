@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { AuthService } from '../services/auth.service';
 import { VisualizarContaPage } from '../pages/visualizar-conta/visualizar-conta';
+import { ClientesPage } from '../pages/clientes/clientes';
 
 @Component({
   templateUrl: 'app.html'
@@ -53,8 +54,11 @@ export class MyApp {
   }
 
   dados(){
-    console.log('entrou');
     this.nav.setRoot(VisualizarContaPage);
+  }
+
+  compras(){
+    this.nav.setRoot(ClientesPage);
   }
 
 }

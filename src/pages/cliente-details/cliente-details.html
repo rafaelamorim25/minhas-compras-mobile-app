@@ -6,7 +6,10 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Cliente</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Compra</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -50,7 +53,7 @@
               Descrição: {{ c.descricao }}
             </ion-row>
             <ion-row style="margin-top: 5px;">
-              Data: {{ c.data }}
+              Data: {{ formatarData(c.data) }}
             </ion-row>
             <ion-row style="margin-top: 5px;">
               Pagamento: {{ c.formaPagamento.descricao}}
@@ -77,7 +80,7 @@
         <ion-row>
           <ion-col>
             <ion-row style="margin-top: 5px;">
-              Data: {{ recebimento?.data }}
+              Data: {{ formatarData(recebimento?.data) }}
             </ion-row>
             <ion-row style="margin-top: 5px;">
               Valor: {{ recebimento?.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }) }}

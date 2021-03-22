@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { ClienteDTO } from '../../models/cliente.dto';
 import { ClienteService } from '../../services/cliente.service';
 import { ClienteDetailsPage } from '../cliente-details/cliente-details';
+import { VisualizarContaPage } from '../visualizar-conta/visualizar-conta';
 
 /**
  * Generated class for the ClienteEditarPage page.
@@ -72,7 +73,7 @@ export class ClienteEditarPage {
     );
 
     this.clienteService.update(cliente).subscribe(
-      r => {this.navCtrl.setRoot(ClienteDetailsPage); this.exibirMensagem('Conta atualizada com sucesso')},
+      r => {this.navCtrl.setRoot(VisualizarContaPage); this.exibirMensagem('Conta atualizada com sucesso')},
       error => {
         let mensagem: string = '';
 
@@ -87,7 +88,7 @@ export class ClienteEditarPage {
   }
 
   cancelar(){
-    this.navCtrl.setRoot(ClienteDetailsPage);
+    this.navCtrl.setRoot(VisualizarContaPage);
   }
 
   exibirMensagem(mensagem: string) {

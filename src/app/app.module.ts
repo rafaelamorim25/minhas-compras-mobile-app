@@ -13,19 +13,24 @@ import { AuthService } from '../services/auth.service';
 import { ClienteService } from '../services/cliente.service';
 import { VisualizarContaPage } from '../pages/visualizar-conta/visualizar-conta';
 import { ClienteEditarPage } from '../pages/cliente-editar/cliente-editar';
+import { VisualizarContaPageModule } from '../pages/visualizar-conta/visualizar-conta.module';
+import { ClientesPageModule } from '../pages/clientes/clientes.module';
+import { ClientesPage } from '../pages/clientes/clientes';
 import { ClienteDetailsPage } from '../pages/cliente-details/cliente-details';
+import { ClienteDetailsPageModule } from '../pages/cliente-details/cliente-details.module';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    VisualizarContaPage,
-    ClienteEditarPage,
-    ClienteDetailsPage
+    ClienteEditarPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    VisualizarContaPageModule,
+    ClientesPageModule,
+    ClienteDetailsPageModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -34,7 +39,8 @@ import { ClienteDetailsPage } from '../pages/cliente-details/cliente-details';
     HomePage,
     VisualizarContaPage,
     ClienteEditarPage,
-    ClienteDetailsPage
+    ClienteDetailsPage,
+    ClientesPage
   ],
   providers: [
     StatusBar,
